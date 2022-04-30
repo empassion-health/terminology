@@ -160,8 +160,8 @@ revenue_code,description
 0319,Other
 0320,Radiology – Diagnostic
 0321,Angiocardiography
-0323,Arthrography
-0324,Arteriography
+0322,Arthrography
+0323,Arteriography
 0324,Chest X-ray
 0329,Other
 0330,Radiology – Therapeutic and-or Chemotherapy Administration
@@ -176,10 +176,6 @@ revenue_code,description
 0343,Diagnostic radiopharmaceuticals
 0344,Therapeutic radiopharmaceuticals
 0349,Other
-0350,Computerized Tomography CT Scan
-0351,Head scan
-0352,Body scan
-0359,Other CT scans
 0350,Computerized Tomography CT Scan
 0351,Head scan
 0352,Body scan
@@ -352,7 +348,6 @@ revenue_code,description
 0660,General Respite Care Home Health Only
 0661,Hourly charge-skilled nursing
 0662,Hourly charge-home health aide-homemaker-companion
-0633,Daily Respite Charge
 0669,Other Respite
 0670,Outpatient Special Residence Charges
 0671,Hospital owned
