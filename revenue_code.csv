@@ -318,7 +318,7 @@ revenue_code,description
 0621,Supplies incident to radiology
 0622,Supplies incident to other diagnostic services
 0623,Surgical dressings
-0624*,FDA investigational devices
+0624,FDA investigational devices
 0630,Drugs Requiring Specification Identification
 0631,Single source drug
 0632,Multiple source drug
@@ -392,6 +392,7 @@ revenue_code,description
 0812,Cadaver donor
 0813,Unknown donor
 0814,Unsuccessful organ search – donor bank charges
+0815,Allogeneic stem cell acquisition/donor services
 0819,Other donor
 0820,Hemodialysis Outpatient or Home
 0821,Hemodialysis – composite or other rate
@@ -425,6 +426,7 @@ revenue_code,description
 0881,Ultra-filtration
 0882,Home dialysis aid visit
 0889,Other
+0891,Other donor bank-bone; changed to reserved for national assignment
 0900,Behavioral Health Treatment
 0901,Electroshock treatment
 0902,Milieu therapy
