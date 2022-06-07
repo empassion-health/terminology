@@ -273,16 +273,16 @@ revenue_code,description
 0530,Osteopathic Services
 0531,Osteopathic therapy
 0539,Other
-0540,Ambulance
-0541,Supplies
-0542,Medical transport
-0543,Heart mobile
-0544,Oxygen
-0545,Air ambulance
-0546,Neonatal ambulance services
-0547,Pharmacy
-0548,Telephone transmission EKG
-0549,Other ALS
+0540,Ambulance-general classification
+0541,Ambulance-Supplies
+0542,Ambulance-Medical transport
+0543,Ambulance-Heart mobile
+0544,Ambulance-Oxygen
+0545,Ambulance-air ambulance
+0546,Ambulance-neonatal ambulance
+0547,Ambulance-pharmacy
+0548,Ambulance-telephone transmission EKG
+0549,Ambulance-other
 0550,Skilled Nursing
 0551,Visit charge
 0552,Hourly charge
