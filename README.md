@@ -2,9 +2,9 @@
 
 # Terminology
 
-This repo is the source of truth for all terminology datasets maintained in the Tuva Project.  For a complete summary of all terminology datasets that ship with the Tuva Project, check out the [Tuva Data Model](https://docs.google.com/spreadsheets/d/1q6VBqGJ3PBW0vYD1wrsN5jmcP0cEXQNd3xTyTgtHlcU/edit#gid=317925937).
+This repo is the source of truth for all terminology datasets maintained in the Tuva Project.  For a complete summary of all terminology datasets that ship with the Tuva Project, check out the Terminology Datasets tab in [Tuva Data Models](https://docs.google.com/spreadsheets/d/1NuMEhcx6D6MSyZEQ6yk0LWU0HLvaeVma8S-5zhOnbcE/edit?usp=sharing).
 
-For more info, read our [Docs](http://thetuvaproject.com/)
+For more info about the Tuva Project check out our [docs](http://thetuvaproject.com/)
 
 To see what we're building next, take a look at our [Virtual Roadmap](https://miro.com/app/board/uXjVOxvjM5o=/)
 
