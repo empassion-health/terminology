@@ -25,6 +25,7 @@ seeds:
       column_types:
         code : varchar
         description : varchar
+        newborn_description : varchar
   - name: admit_type
     config:
       database: "{{ var('output_database') }}"
@@ -49,6 +50,16 @@ seeds:
       column_types:
         ccs_procedure_category : varchar
         description : varchar
+  - name: bill_type
+    config:
+      database: "{{ var('output_database') }}"
+      schema: "{{ var('output_schema')}}"
+      tags: terminology
+      column_types:
+        code : varchar
+        description : varchar
+        deprecated : int
+        deprecated_date : date
   - name: chronic_conditions
     config:
       database: "{{ var('output_database') }}"
@@ -65,6 +76,14 @@ seeds:
         inclusion_type : varchar
         code_system : varchar
         code : varchar
+  - name: claim_type
+    config:
+      database: "{{ var('output_database') }}"
+      schema: "{{ var('output_schema')}}"
+      tags: terminology
+      column_types:
+        code : varchar
+        description : varchar
   - name: code_type
     config:
       database: "{{ var('output_database') }}"
@@ -86,6 +105,14 @@ seeds:
       schema: "{{ var('output_schema')}}"
       tags: terminology
       column_types:
+        description : varchar
+  - name: ethnicity
+    config:
+      database: "{{ var('output_database') }}"
+      schema: "{{ var('output_schema')}}"
+      tags: terminology
+      column_types:
+        code : varchar
         description : varchar
   - name: exclusion_ccs_diagnosis_category
     config:
@@ -162,16 +189,42 @@ seeds:
       column_types:
         mdc : varchar
         description : varchar
+  - name: medicare_dual_eligibility
+    config:
+      database: "{{ var('output_database') }}"
+      schema: "{{ var('output_schema')}}"
+      tags: terminology
+      column_types:
+        code : varchar
+        description : varchar
+  - name: medicare_state_fips
+    config:
+      database: "{{ var('output_database') }}"
+      schema: "{{ var('output_schema')}}"
+      tags: terminology
+      column_types:
+        fips_code : varchar
+        state : varchar
+  - name: medicare_status_code
+    config:
+      database: "{{ var('output_database') }}"
+      schema: "{{ var('output_schema')}}"
+      tags: terminology
+      column_types:
+        code : varchar
+        description : varchar
   - name: ms_drg
     config:
       database: "{{ var('output_database') }}"
       schema: "{{ var('output_schema')}}"
       tags: terminology
       column_types:
-        ms_drg : varchar
+        code : varchar
         mdc : varchar
         medical_surgical : varchar
         description : varchar
+        deprecated: int
+        deprecated_date: date
   - name: payer_type
     config:
       database: "{{ var('output_database') }}"
@@ -211,6 +264,14 @@ seeds:
       column_types:
         present_on_admit_code : varchar
         description : varchar
+  - name: race
+    config:
+      database: "{{ var('output_database') }}"
+      schema: "{{ var('output_schema')}}"
+      tags: terminology
+      column_types:
+        code : varchar
+        description : varchar
   - name: revenue_center_code
     config:
       database: "{{ var('output_database') }}"
@@ -229,6 +290,15 @@ seeds:
         description : varchar
         specialty_cohort : varchar
         procedure_or_diagnosis : varchar
+  - name: state
+    config:
+      database: "{{ var('output_database') }}"
+      schema: "{{ var('output_schema')}}"
+      tags: terminology
+      column_types:
+        fips_code : varchar
+        abbreviation : varchar
+        description : varchar
   - name: surgery_gynecology_cohort
     config:
       database: "{{ var('output_database') }}"

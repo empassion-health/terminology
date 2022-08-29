@@ -10,7 +10,7 @@ macro-paths: ["macros"]
 
 vars:
   output_database: tuva
-  output_schema: terminology
+  output_schema: terminology_test
 
 # target-path: "target"  # directory which will store compiled SQL files
 # clean-targets:         # directories to be removed by `dbt clean`
