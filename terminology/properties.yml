@@ -71,7 +71,7 @@ seeds:
         condition_column_name : varchar
         chronic_condition_type : varchar
         condition_category : varchar
-        additional_logic : varchar
+        additional_logic : varchar (1000)
         claims_qualification : varchar
         inclusion_type : varchar
         code_system : varchar
@@ -123,6 +123,24 @@ seeds:
         ccs_diagnosis_category : varchar
         description : varchar
         exclusion_category : varchar
+  - name: fips_county
+    config:
+      database: "{{ var('output_database') }}"
+      schema: "{{ var('output_schema')}}"
+      tags: terminology
+      column_types:
+        fips_code : varchar
+        county : varchar
+        state : varchar
+  - name: fips_state
+    config:
+      database: "{{ var('output_database') }}"
+      schema: "{{ var('output_schema')}}"
+      tags: terminology
+      column_types:
+        fips_code : varchar
+        abbreviation : varchar
+        description : varchar
   - name: gender
     config:
       database: "{{ var('output_database') }}"
@@ -139,7 +157,7 @@ seeds:
         hcpcs : varchar
         seqnum : varchar
         recid : varchar
-        long_description : varchar
+        long_description : varchar(2000)
         short_description : varchar
   - name: icd_10_cm
     config:
@@ -290,15 +308,6 @@ seeds:
         description : varchar
         specialty_cohort : varchar
         procedure_or_diagnosis : varchar
-  - name: state
-    config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
-      column_types:
-        fips_code : varchar
-        abbreviation : varchar
-        description : varchar
   - name: surgery_gynecology_cohort
     config:
       database: "{{ var('output_database') }}"
