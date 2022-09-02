@@ -11,17 +11,3 @@ macro-paths: ["macros"]
 vars:
   output_database: tuva
   output_schema: terminology
-
-# target-path: "target"  # directory which will store compiled SQL files
-# clean-targets:         # directories to be removed by `dbt clean`
-#   - "target"
-#   - "dbt_packages"
-#   - "snapshots"
-#   - "tests"
-#   - "logs"
-#   - "analyses"
-
-
-
-# Full documentation on configuration: https://docs.getdbt.com/docs/configuring-models
-
