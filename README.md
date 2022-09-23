@@ -2,8 +2,7 @@
 
 # Terminology
 
-This is the Tuva Project's Terminology Repository, a single source of truth for all terminology datasets used and maintained by the Tuva Project.  For more detailed information and a summary of all terminology datasets that ship with the Tuva Project, check out our [Terminlogy Docs site](https://thetuvaproject.com/docs/terminology).
-
+This is the Tuva Project's Terminology Repository, a single source of truth for all terminology datasets used and maintained by the Tuva Project.  You can load all the terminology datasets contained in this repository into your data warehouse with a single command.
 
 Knowledge Base:
 - Check out the [catalog](https://thetuvaproject.com/docs/terminology) of all terminology sets included in this repository
