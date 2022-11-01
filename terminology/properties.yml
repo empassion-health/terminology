@@ -39,7 +39,7 @@ seeds:
       schema: "{{ var('output_schema')}}"
       tags: terminology
       column_types:
-        admit_type_code : |
+        code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -125,7 +125,7 @@ seeds:
       schema: "{{ var('output_schema')}}"
       tags: terminology
       column_types:
-        discharge_disposition_code : |
+        code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -333,7 +333,7 @@ seeds:
       schema: "{{ var('output_schema')}}"
       tags: terminology
       column_types:
-        place_of_service_code : |
+        code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
