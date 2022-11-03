@@ -1,4 +1,4 @@
-code,description
+dual_status_code,dual_status_description
 "00","Eligible is not a Medicare beneficiary"
 "01","Eligible is entitled to Medicare- Qualified Medicare Beneficiary (QMB) only"
 "02","Eligible is entitled to Medicare-QMB and Medicaid coverage including prescription drugs"

@@ -1,31 +1,40 @@
 version: 2
 
 seeds:
-  - name: acute_diagnosis_ccs
+  - name: terminology__acute_diagnosis_ccs
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: acute_diagnosis_ccs
+      tags:
+        - terminology
+        - readmissions
       column_types:
         ccs_diagnosis_category : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: acute_diagnosis_icd_10_cm
+  - name: terminology__acute_diagnosis_icd_10_cm
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: acute_diagnosis_icd_10_cm
+      tags:
+        - terminology
+        - readmissions
       column_types:
         icd_10_cm : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: admit_source
+  - name: terminology__admit_source
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: admit_source
+      tags:
+        - terminology
+        - claims_preprocessing
       column_types:
         admit_source_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -33,41 +42,53 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         newborn_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: admit_type
+  - name: terminology__admit_type
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: admit_type
+      tags:
+        - terminology
+        - claims_preprocessing
       column_types:
         code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: always_planned_ccs_diagnosis_category
+  - name: terminology__always_planned_ccs_diagnosis_category
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: always_planned_ccs_diagnosis_category
+      tags:
+        - terminology
+        - readmissions
       column_types:
         ccs_diagnosis_category : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: always_planned_ccs_procedure_category
+  - name: terminology__always_planned_ccs_procedure_category
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: always_planned_ccs_procedure_category
+      tags:
+        - terminology
+        - readmissions
       column_types:
         ccs_procedure_category : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: bill_type
+  - name: terminology__bill_type
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: bill_type
+      tags:
+        - terminology
+        - data_profiling
       column_types:
         bill_type_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -75,11 +96,14 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         deprecated : int
         deprecated_date : date
-  - name: chronic_conditions
+  - name: terminology__chronic_conditions
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: chronic_conditions
+      tags:
+        - terminology
+        - chronic_conditions
       column_types:
         condition_id : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -101,56 +125,70 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: claim_type
+  - name: terminology__claim_type
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: claim_type
+      tags:
+        - terminology
+        - data_profiling
       column_types:
         claim_type_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         claim_type_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: code_type
+  - name: terminology__code_type
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: code_type
       tags: terminology
       column_types:
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: discharge_disposition
+  - name: terminology__discharge_disposition
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: discharge_disposition
+      tags:
+        - terminology
+        - claims_preprocessing
+        - readmissions
+        - data_profiling
       column_types:
-        code : |
+        discharge_disposition_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         discharge_disposition_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: encounter_type
+  - name: terminology__encounter_type
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: encounter_type
+      tags:
+        - terminology
+        - claims_preprocessing
       column_types:
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: ethnicity
+  - name: terminology__ethnicity
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: ethnicity
       tags: terminology
       column_types:
         code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: exclusion_ccs_diagnosis_category
+  - name: terminology__exclusion_ccs_diagnosis_category
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: exclusion_ccs_diagnosis_category
       tags: terminology
       column_types:
         ccs_diagnosis_category : |
@@ -159,10 +197,11 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         exclusion_category : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: fips_county
+  - name: terminology__fips_county
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: fips_county
       tags: terminology
       column_types:
         fips_code : |
@@ -171,10 +210,11 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         state : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: fips_state
+  - name: terminology__fips_state
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: fips_state
       tags: terminology
       column_types:
         fips_code : |
@@ -183,18 +223,23 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: gender
+  - name: terminology__gender
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: gender
+      tags:
+        - terminology
+        - readmissions
+        - data_profiling
       column_types:
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: hcpcs_level_2
+  - name: terminology__hcpcs_level_2
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: hcpcs_level_2
       tags: terminology
       column_types:
         hcpcs : |
@@ -207,11 +252,16 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar(2000) {%- endif -%}
         short_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: icd_10_cm
+  - name: terminology__icd_10_cm
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: icd_10_cm
+      tags:
+        - terminology
+        - claims_preprocessing
+        - readmissions
+        - data_profiling
       column_types:
         icd_10_cm : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -221,11 +271,14 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         long_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: icd_10_cm_to_ccs
+  - name: terminology__icd_10_cm_to_ccs
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: icd_10_cm_to_ccs
+      tags:
+        - terminology
+        - readmissions
       column_types:
         icd_10_cm : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -235,11 +288,15 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         ccs_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: icd_10_pcs
+  - name: terminology__icd_10_pcs
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: icd_10_pcs
+      tags:
+        - terminology
+        - claims_preprocessing
+        - readmissions
       column_types:
         icd_10_pcs : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -249,11 +306,14 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         long_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: icd_10_pcs_to_ccs
+  - name: terminology__icd_10_pcs_to_ccs
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: icd_10_pcs_to_ccs
+      tags:
+        - terminology
+        - readmissions
       column_types:
         icd_10_pcs : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -263,135 +323,165 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         ccs_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: mdc
+  - name: terminology__mdc
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: mdc
       tags: terminology
       column_types:
-        mdc : |
+        mdc_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-        description : |
+        mcd_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: medicare_dual_eligibility
+  - name: terminology__medicare_dual_eligibility
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: medicare_dual_eligibility
       tags: terminology
       column_types:
-        code : |
+        dual_status_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-        description : |
+        dual_status_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: medicare_state_fips
+  - name: terminology__medicare_state_fips
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: medicare_state_fips
       tags: terminology
       column_types:
         fips_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         state : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: medicare_status_code
+  - name: terminology__medicare_status
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: medicare_status
       tags: terminology
       column_types:
-        code : |
+        medicare_status_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-        description : |
+        medicare_status_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: ms_drg
+  - name: terminology__ms_drg
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: ms_drg
+      tags:
+        - terminology
+        - readmissions
+        - data_profiling
       column_types:
-        code : |
+        ms_drg_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         mdc : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         medical_surgical : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-        description : |
+        ms_drg_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         deprecated: integer
         deprecated_date: date
-  - name: payer_type
+  - name: terminology__payer_type
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: payer_type
       tags: terminology
       column_types:
-        description : |
+        payer_type : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: place_of_service
+  - name: terminology__place_of_service
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: place_of_service
+      tags:
+        - terminology
+        - claims_preprocessing
+        - data_profiling
       column_types:
-        code : |
+        place_of_service_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-        description : |
+        place_of_service_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: potentially_planned_ccs_procedure_category
+  - name: terminology__potentially_planned_ccs_procedure_category
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: potentially_planned_ccs_procedure_category
+      tags:
+        - terminology
+        - readmissions
       column_types:
         ccs_procedure_category : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: potentially_planned_icd_10_pcs
+  - name: terminology__potentially_planned_icd_10_pcs
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: potentially_planned_icd_10_pcs
+      tags:
+        - terminology
+        - readmissions
       column_types:
         icd_10_pcs : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: present_on_admission
+  - name: terminology__present_on_admission
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: present_on_admission
+      tags:
+        - terminology
+        - data_profiling
       column_types:
         present_on_admit_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: race
+  - name: terminology__race
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: race
       tags: terminology
       column_types:
-        code : |
+        race_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-        description : |
+        race_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: revenue_center_code
+  - name: terminology__revenue_center
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: revenue_center
+      tags:
+        - terminology
+        - claims_preprocessing
+        - data_profiling
       column_types:
         revenue_center_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: specialty_cohort
+  - name: terminology__specialty_cohort
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: specialty_cohort
+      tags:
+        - terminology
+        - readmissions
       column_types:
         ccs : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -401,11 +491,14 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         procedure_or_diagnosis : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: surgery_gynecology_cohort
+  - name: terminology__surgery_gynecology_cohort
     config:
-      database: "{{ var('output_database') }}"
-      schema: "{{ var('output_schema')}}"
-      tags: terminology
+      database: "{{ var('terminology_database') }}"
+      schema: "{{ var('terminology_schema') }} "
+      alias: surgery_gynecology_cohort
+      tags:
+        - terminology
+        - readmissions
       column_types:
         icd_10_pcs : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}

@@ -9,5 +9,5 @@ seed-paths: ["terminology"]
 macro-paths: ["macros"]
 
 vars:
-  output_database: tuva
-  output_schema: terminology_test
+  terminology_database: tuva
+  terminology_schema: terminology_forrest_test
