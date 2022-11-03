@@ -1,4 +1,4 @@
-﻿"CODE","MDC","MEDICAL_SURGICAL","DESCRIPTION","DEPRECATED","DEPRECATED_DATE"
+﻿"code","mdc","medical_surgical","description","deprecated","deprecated_date"
 "001",,"Surgical","Heart transplant or implant of heart assist system with MCC","0","2023-04-01"
 "002",,"Surgical","Heart transplant or implant of heart assist system without MCC","0","2023-04-01"
 "003",,"Surgical","ECMO or tracheostomy with MV >96 hours or principal diagnosis except face, mouth and neck with major O.R. procedures","0","2023-04-01"

@@ -27,9 +27,9 @@ seeds:
       schema: "{{ var('output_schema')}}"
       tags: terminology
       column_types:
-        code : |
+        admit_source_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-        description : |
+        admit_source_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         newborn_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -39,7 +39,7 @@ seeds:
       schema: "{{ var('output_schema')}}"
       tags: terminology
       column_types:
-        admit_type_code : |
+        code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -69,9 +69,9 @@ seeds:
       schema: "{{ var('output_schema')}}"
       tags: terminology
       column_types:
-        code : |
+        bill_type_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-        description : |
+        bill_type_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         deprecated : int
         deprecated_date : date
@@ -107,9 +107,9 @@ seeds:
       schema: "{{ var('output_schema')}}"
       tags: terminology
       column_types:
-        code : |
+        claim_type_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-        description : |
+        claim_type_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: code_type
     config:
@@ -127,7 +127,7 @@ seeds:
       column_types:
         discharge_disposition_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-        description : |
+        discharge_disposition_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: encounter_type
     config:
@@ -317,7 +317,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-        deprecated: int
+        deprecated: integer
         deprecated_date: date
   - name: payer_type
     config:
@@ -333,7 +333,7 @@ seeds:
       schema: "{{ var('output_schema')}}"
       tags: terminology
       column_types:
-        place_of_service_code : |
+        code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}

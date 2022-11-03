@@ -1,4 +1,4 @@
-code,description,newborn_description
+admit_source_code,admit_source_description,newborn_description
 0,Anomaly,null
 1,Non-Health Care Facility Point of Origin (Physician Referral),Normal delivery
 2,Clinic Referral,Premature delivery

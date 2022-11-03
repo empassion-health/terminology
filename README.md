@@ -18,7 +18,7 @@ Complete the following steps to configure the package to run in your environment
         - **output_schema** - database where terminology data set will be loaded.  default: `terminology`
     - Alternatively, custom variables can be passed at the command line. See step 5 for more detail
 4. Optional: Individual seed files can be disabled 
-    - Add `enabled: false` to the `config:` section of any unwanted terminology set in [properties.yml](./terminology/properties.yml).
+    - Add `enabled: false` to the `config:` section of any unwanted terminology set in [properties.yml](./terminology/seeds.yml).
     - See the [dbt documentation](https://docs.getdbt.com/reference/seed-configs) for more detail and other configuration options.
 5. Execute `dbt seed` to load all terminology files
     - To load a single seed file, use syntax like `dbt seed --select gender.csv`
