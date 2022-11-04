@@ -59,9 +59,9 @@ seeds:
         - terminology
         - claims_preprocessing
       column_types:
-        code : |
+        admit_type_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-        description : |
+        admit_type_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__always_planned_ccs_diagnosis_category
     config:
@@ -433,7 +433,7 @@ seeds:
       column_types:
         ms_drg_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-        mdc : |
+        mdc_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         medical_surgical : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
