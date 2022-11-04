@@ -2,26 +2,67 @@
 
 # Terminology
 
-This is the Tuva Project's Terminology Repository, a single source of truth for all terminology datasets used and maintained by the Tuva Project.  You can load all the terminology datasets contained in this repository into your data warehouse with a single command.
+This is The Tuva Project's terminology package, a single source of truth for all terminology datasets used and maintained by The Tuva Project.  You can load all of the terminology datasets contained in this repository into your data warehouse with a single command.
 
 Knowledge Base:
 - Check out the [catalog](https://thetuvaproject.com/docs/terminology) of all terminology sets included in this repository
 
 ## Getting Started
+This is a [dbt](https://www.getdbt.com/) package, designed for use as part of an existing dbt project.  For help getting started with dbt, see the [dbt getting started guide](https://docs.getdbt.com/docs/get-started/getting-started/overview).  
+
 Complete the following steps to configure the package to run in your environment.
 
-1. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) this repo to your local machine or environment
-2. Create a database to load terminology to, if it does not already exist.
-3. Optional: Custom database/schema targets can be configured in the [dbt_project.yml](./dbt_project.yml) file
-    - Fill in vars (variables):
-        - **output_database** - database where terminology data set will be loaded.  default: `tuva`
-        - **output_schema** - database where terminology data set will be loaded.  default: `terminology`
-    - Alternatively, custom variables can be passed at the command line. See step 5 for more detail
-4. Optional: Individual seed files can be disabled 
-    - Add `enabled: false` to the `config:` section of any unwanted terminology set in [properties.yml](./terminology/_seeds.yml).
-    - See the [dbt documentation](https://docs.getdbt.com/reference/seed-configs) for more detail and other configuration options.
-5. Execute `dbt seed` to load all terminology files
-    - To load a single seed file, use syntax like `dbt seed --select gender.csv`
-    - To overwrite the database or schema configurations in [dbt_project.yml](./dbt_project.yml), use syntax like `dbt seed --vars '{output_database: tuva_test, output_schema: terminology_test}'`
-    - See the [dbt documentation](https://docs.getdbt.com/reference/global-configs#command-line-flags) for more detail
+1. Create a **packages.yml** file in your dbt project, and add the following
+```
+packages:
+  - package: tuva-health/terminology
+    version: 0.1.0
+```
+2. Run ``dbt deps`` to load this package into your project.  To use default behavior, skip to step 6.
+3. Optional: Define a custom database name in dbt_project.yml
+    - By default, terminology seeds will be written to a `tuva` database 
+    - To override the default database for all Tuva packages, add a `tuva_database` variable to your dbt_project.yml
+      ```
+      vars:
+        tuva_database: tuva_test_db
+      ```
+    - To override the default database for the terminology package only, add a `terminology_schema` variable. This will take precedence over `tuva_database`
+      ```
+      vars:
+        terminology_database: tuva_terminology  # terminology will be written to this database
+        tuva_database: tuva_marts               # all other packages will be written to this database
+      ```
 
+4. Optional: Define custom schema in dbt_project.yml 
+    - By default, terminology seeds will be written to a `terminology` schema 
+    - To prepend a prefix to all default schemas in tuva packages, add a `tuva_schema_prefix` variable to your dbt_project.yml.  This will write the terminology seeds to a `<tuva_schema_prefix>_terminology` schema
+      ```
+      vars:
+        tuva_schema_prefix: new_source_test     # terminology will be written to a new_source_test_terminology schema
+      ```
+    - To override the default schema for the terminology package only, add a `terminology_schema` variable. This will take precedence over tuva_schema_prefix.
+      ```
+      vars:
+        terminology_schema: healthcare_terminology
+      ```
+5. Optional: disable packages in dbt_project.yml
+   - To disable all tuva packages, add a `tuva_packages_enabled` variable and set it to `False`
+      ```
+      vars:
+        tuva_packages_enabled: False
+      ```
+   - To disable the terminology package only, add a `terminology_enabled` variable and set it to `False`
+      ```
+      vars:
+        terminology_enabled: False
+      ```
+   - `terminology_enabled` will take precedence over `tuva_packages_enabled`, so you have the option of disabling all tuva packages except those explicitly enabled
+      ```
+      vars:
+        tuva_packages_enabled: False
+        terminology_enabled: True
+      ```
+6. Execute `dbt seed` to load all terminology sets to your warehouse
+   - Alternatively, execute `dbt build` to load all seeds _and_ run the entire project 
+   - To load a single seed file, use select model name syntax, e.g.: `dbt seed --select terminology__gender.csv`
+   - To load only terminology files required by a specific Tuva package, use the pagkage name as a tag, e.g.: `dbt seed --select 'tag:readmissions'`

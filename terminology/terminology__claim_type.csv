@@ -1,5 +1,5 @@
-claim_type_code,claim_type_description
-d,dental
-i,institutional
-p,professional
-v,vision
+claim_type
+dental
+institutional
+professional
+vision
