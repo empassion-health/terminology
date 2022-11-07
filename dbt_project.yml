@@ -1,13 +1,9 @@
-
 name: 'terminology'
-version: '1.0.0'
+version: '0.1.0'
 config-version: 2
 
-profile: 'terminology'
+profile: 'default'
 
 seed-paths: ["terminology"]
 macro-paths: ["macros"]
 
-vars:
-  output_database: tuva
-  output_schema: terminology

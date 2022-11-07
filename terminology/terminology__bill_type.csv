@@ -1,4 +1,4 @@
-"CODE","DESCRIPTION","DEPRECATED","DEPRECATED_DATE"
+bill_type_code,bill_type_description,deprecated,deprecated_date
 "110","Hospital Inpatient (Part A) Non-payment/Zero Claim","0",
 "111","Hospital Inpatient (Part A) Admit Through Discharge","0",
 "112","Hospital Inpatient (Part A) Interim - First Claim","0",
