@@ -2,8 +2,9 @@ name: 'terminology'
 version: '0.1.0'
 config-version: 2
 
-profile: 'default'
+profile: 'default_redshift'
 
 seed-paths: ["terminology"]
 macro-paths: ["macros"]
+
 
