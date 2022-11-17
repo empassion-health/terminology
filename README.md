@@ -1,3 +1,6 @@
+
+![https://img.shields.io/badge/License-Apache%202.0-blue.svg](https://img.shields.io/badge/License-Apache%202.0-blue.svg) ![https://img.shields.io/static/v1?logo=dbt&label=dbt-version&message=1.2.x&color=orange](https://img.shields.io/static/v1?logo=dbt&label=dbt-version&message=1.2.x&color=orange)
+
 # Terminology
 
 ## 🧰 What does this project do?
