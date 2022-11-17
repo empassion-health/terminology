@@ -5,7 +5,7 @@
 
 ## 🧰 What does this project do?
 
-The Tuva Project's Terminology data mart is a single source of truth for all terminology datasets used and maintained by The Tuva Project.  For a detailed overview of what the project does and how it works, check out our [Knowledge Base](https://thetuvaproject.com/docs/terminology).  For information on data models and to view the entire DAG check out our dbt [Docs](https://tuva-health.github.io/terminology/#!/overview).
+The Tuva Project's Terminology data mart is a single source of truth for all terminology datasets used and maintained by The Tuva Project.  For a detailed overview of what the project does and how it works, check out our [Knowledge Base](https://thetuvaproject.com/docs/packages/terminology).  For information on data models and to view the entire DAG check out our dbt [Docs](https://tuva-health.github.io/terminology/#!/overview).
 
 ## 🔌 Database Support
 
