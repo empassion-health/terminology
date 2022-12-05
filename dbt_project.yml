@@ -1,5 +1,5 @@
 name: 'terminology'
-version: '0.1.3'
+version: '0.1.4'
 config-version: 2
 
 require-dbt-version: [">=1.2.0", "<2.0.0"]
@@ -8,3 +8,4 @@ profile: 'default'
 
 seed-paths: ["terminology"]
 macro-paths: ["macros"]
+docs-paths: ["docs"]
