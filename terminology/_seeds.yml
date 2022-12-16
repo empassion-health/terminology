@@ -8,9 +8,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: acute_diagnosis_ccs
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -27,9 +27,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: acute_diagnosis_icd_10_cm
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -46,9 +46,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: admit_source
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -67,9 +67,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: admit_type
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -86,9 +86,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: always_planned_ccs_diagnosis_category
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -105,9 +105,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: always_planned_ccs_procedure_category
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -124,9 +124,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: bill_type
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('data_profiling_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('data_profiling_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -145,9 +145,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: chronic_conditions
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('chronic_conditions_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('chronic_conditions_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -180,9 +180,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: claim_type
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('data_profiling_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('data_profiling_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -210,9 +210,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: discharge_disposition
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) or var('data_profiling_enabled',var('tuva_packages_enabled',True)) or var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) or var('data_profiling_enabled',var('tuva_packages_enabled',True)) or var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -231,9 +231,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: encounter_type
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -261,9 +261,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: exclusion_ccs_diagnosis_category
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -312,9 +312,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: gender
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('data_profiling_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('data_profiling_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -348,9 +348,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: icd_10_cm
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) or var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) or var('data_profiling_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) or var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) or var('data_profiling_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -373,9 +373,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: icd_10_cm_to_ccs
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -396,9 +396,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: icd_10_pcs
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) or var('claims_preprocessing_enabled',var('tuva_packages_enabled',True))  %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) or var('claims_preprocessing_enabled',var('tuva_packages_enabled',True))  %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -420,9 +420,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: icd_10_pcs_to_ccs
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -456,9 +456,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: medicare_dual_eligibility
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -475,13 +475,13 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: medicare_state_fips
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif project_name == 'medicare_cclf_connector' %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
-        - claims_preprocessing
+        - medicare_cclf_connector
       column_types:
         fips_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -494,9 +494,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: medicare_status
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif project_name == 'claims_preprocessing' %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -513,9 +513,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: ms_drg
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) or var('data_profiling_enabled',var('tuva_packages_enabled',True)) or var('claims_preprocessing_enabled',var('tuva_packages_enabled',True))  %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) or var('data_profiling_enabled',var('tuva_packages_enabled',True)) or var('claims_preprocessing_enabled',var('tuva_packages_enabled',True))  %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -551,9 +551,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: place_of_service
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) or var('data_profiling_enabled',var('tuva_packages_enabled',True))  %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) or var('data_profiling_enabled',var('tuva_packages_enabled',True))  %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -571,9 +571,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: potentially_planned_ccs_procedure_category
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -590,9 +590,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: potentially_planned_icd_10_pcs
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -609,9 +609,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: present_on_admission
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('data_profiling_enabled',var('tuva_packages_enabled',True)) or var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('data_profiling_enabled',var('tuva_packages_enabled',True)) or var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -642,9 +642,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: revenue_center
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) or var('data_profiling_enabled',var('tuva_packages_enabled',True))  %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) or var('data_profiling_enabled',var('tuva_packages_enabled',True))  %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -662,9 +662,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: specialty_cohort
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
@@ -685,9 +685,9 @@ seeds:
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: surgery_gynecology_cohort
       enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ var('zzz',True) }}
-        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ var('zzz',True) }}
-        {%- else %}{{ var('terminology_enabled',var('tuva_packages_enabled',False)) }}
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
