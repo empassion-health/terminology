@@ -1,13 +1,10 @@
 ## Describe your changes
-
 Please include a summary of any changes.
 
 ## How has this been tested?
-
 Please describe the tests you ran to verify your changes.  Provide instructions to reproduce or code to reproduce output.
 
 ## Reviewer focus
-
 Please summarize the specific items you’d like the reviewer(s) to look into.
 
 ## Checklist before requesting a review
