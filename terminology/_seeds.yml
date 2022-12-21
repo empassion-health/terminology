@@ -138,20 +138,20 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         deprecated : integer
         deprecated_date : date
-  - name: terminology__chronic_conditions
+  - name: terminology__cms_chronic_conditions
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
-      alias: chronic_conditions
+      alias: cms_chronic_conditions
       enabled: |
         {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
-        {%- elif var('chronic_conditions_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- elif var('cms_chronic_conditions_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
         {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
-        - chronic_conditions
+        - cms_chronic_conditions
       column_types:
         condition_id : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
