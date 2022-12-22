@@ -472,7 +472,9 @@ seeds:
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
-        {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
+        {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}
+        {%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology
+        {% else %}terminology{%- endif -%}
       alias: medicare_state_fips
       enabled: |
         {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
@@ -491,11 +493,13 @@ seeds:
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
-        {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
+        {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}
+        {%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology
+        {% else %}terminology{%- endif -%}
       alias: medicare_status
       enabled: |
         {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
-        {%- elif project_name == 'claims_preprocessing' %}{{ True | as_bool }}
+        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
         {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
