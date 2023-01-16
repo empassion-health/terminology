@@ -9,7 +9,7 @@ The Tuva Project's Terminology data mart is a single source of truth for all ter
 
 ## 🔌 Database Support
 
-This package has been tested on **Snowflake** and **Redshift**.
+This package has been tested on **Snowflake**, **Redshift** and **BigQuery**.
 
 ## ✅ How to get started
 
