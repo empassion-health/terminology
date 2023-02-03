@@ -258,29 +258,6 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         long_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__icd_10_pcs_to_ccs
-    config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
-      schema: |
-        {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
-      alias: icd_10_pcs_to_ccs
-      enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
-        {%- elif var('readmissions_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
-        {%- else %}{{ False | as_bool }}
-        {%- endif -%}
-      tags:
-        - terminology
-        - readmissions
-      column_types:
-        icd_10_pcs : |
-          {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-        description : |
-          {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-        ccs_procedure_category : |
-          {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-        ccs_description : |
-          {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__mdc
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
