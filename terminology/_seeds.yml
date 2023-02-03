@@ -164,8 +164,14 @@ seeds:
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: fips_state
-      enabled: "{{ var('terminology_enabled',var('tuva_packages_enabled',True)) }}"
-      tags: terminology
+      enabled: |
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif project_name == 'medicare_cclf_connector' %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
+        {%- endif -%}
+      tags:
+        - terminology
+        - medicare_cclf_connector
       column_types:
         fips_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -290,22 +296,14 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         dual_status_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__medicare_state_fips
+  - name: terminology__ssa_state_codes
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
-        {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}
-        {%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology
-        {% else %}terminology{%- endif -%}
-      alias: medicare_state_fips
-      enabled: |
-        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
-        {%- elif project_name == 'medicare_cclf_connector' %}{{ True | as_bool }}
-        {%- else %}{{ False | as_bool }}
-        {%- endif -%}
-      tags:
-        - terminology
-        - medicare_cclf_connector
+        {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
+      alias: ssa_state_codes
+      enabled: "{{ var('terminology_enabled',var('tuva_packages_enabled',True)) }}"
+      tags: terminology
       column_types:
         fips_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
