@@ -9,12 +9,13 @@ seeds:
       alias: admit_source
       enabled: |
         {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
-        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) or var('data_profiling_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
         {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
         - claims_preprocessing
+        - data_profiling
       column_types:
         admit_source_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -30,12 +31,13 @@ seeds:
       alias: admit_type
       enabled: |
         {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
-        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) or var('data_profiling_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
         {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
         - claims_preprocessing
+        - data_profiling
       column_types:
         admit_type_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -87,8 +89,14 @@ seeds:
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: code_type
-      enabled: "{{ var('terminology_enabled',var('tuva_packages_enabled',True)) }}"
-      tags: terminology
+      enabled: |
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('data_profiling_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
+        {%- endif -%}
+      tags: 
+        - terminology
+        - data_profiling
       column_types:
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -285,12 +293,13 @@ seeds:
       alias: medicare_dual_eligibility
       enabled: |
         {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
-        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) or var('data_profiling_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
         {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
         - claims_preprocessing
+        - data_profiling
       column_types:
         dual_status_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -319,12 +328,13 @@ seeds:
       alias: medicare_status
       enabled: |
         {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
-        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- elif var('claims_preprocessing_enabled',var('tuva_packages_enabled',True)) or var('data_profiling_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
         {%- else %}{{ False | as_bool }}
         {%- endif -%}
       tags:
         - terminology
         - claims_preprocessing
+        - data_profiling
       column_types:
         medicare_status_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -363,8 +373,14 @@ seeds:
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: payer_type
-      enabled: "{{ var('terminology_enabled',var('tuva_packages_enabled',True)) }}"
-      tags: terminology
+      enabled: |
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('data_profiling_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
+        {%- endif -%}
+      tags: 
+        - terminology
+        - data_profiling
       column_types:
         payer_type : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
@@ -414,8 +430,14 @@ seeds:
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: race
-      enabled: "{{ var('terminology_enabled',var('tuva_packages_enabled',True)) }}"
-      tags: terminology
+      enabled: |
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('data_profiling_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
+        {%- endif -%}
+      tags: 
+        - terminology
+        - data_profiling
       column_types:
         race_code : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
