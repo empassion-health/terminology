@@ -463,3 +463,24 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
+  - name: terminology__apr_drg
+    config:
+      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      schema: |
+        {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
+      alias: apr_drg
+      enabled: |
+        {%- if var('terminology_enabled',var('tuva_packages_enabled',True))  -%}{{ True | as_bool }}
+        {%- elif var('data_profiling_enabled',var('tuva_packages_enabled',True)) %}{{ True | as_bool }}
+        {%- else %}{{ False | as_bool }}
+        {%- endif -%}
+      tags:
+        - terminology
+        - data_profiling
+      column_types:
+        apr_drg_code : |
+          {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
+        severity : |
+          {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
+        apr_drg_description : |
+          {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
