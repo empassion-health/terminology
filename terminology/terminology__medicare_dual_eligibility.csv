@@ -9,4 +9,4 @@ dual_status_code,dual_status_description
 "08","Eligible is entitled to Medicare-Other Dual Eligibles (Non QMB, SLMB, QDWI or QI) including prescription drugs"
 "09","Eligible is entitled to Medicare – but without Medicaid coverage (This code is to be used only with specific CMS approval)."
 "10","Separate CHIP Eligible is entitled to Medicare"
-"Null/missing","source value is missing or unknown"
+"NA","Non-Medicaid"
