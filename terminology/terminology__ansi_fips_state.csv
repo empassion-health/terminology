@@ -1,4 +1,4 @@
-fips_code,abbreviation,description
+ansi_fips_state_code,ansi_fips_state_abbreviation,ansi_fips_state_name
 "01","AL","Alabama"
 "02","AK","Alaska"
 "04","AZ","Arizona"
