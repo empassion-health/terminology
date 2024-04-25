@@ -1,7 +1,7 @@
 version: 2
 
 seeds:
-  - name: terminology__admit_source
+  - name: terminology__admit_source_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -23,7 +23,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         newborn_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__admit_type
+  - name: terminology__admit_type_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -43,7 +43,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         admit_type_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__bill_type
+  - name: terminology__bill_type_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -64,7 +64,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         deprecated : integer
         deprecated_date : date
-  - name: terminology__claim_type
+  - name: terminology__claim_type_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -83,7 +83,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         claim_type_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__code_type
+  - name: terminology__code_type_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -100,7 +100,7 @@ seeds:
       column_types:
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__discharge_disposition
+  - name: terminology__discharge_disposition_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -121,7 +121,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         discharge_disposition_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__encounter_type
+  - name: terminology__encounter_type_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -138,7 +138,7 @@ seeds:
       column_types:
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__ethnicity
+  - name: terminology__ethnicity_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -151,7 +151,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__fips_county
+  - name: terminology__fips_county_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -166,7 +166,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         state : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__ansi_fips_state
+  - name: terminology__ansi_fips_state_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -187,7 +187,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         ansi_fips_state_name : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__gender
+  - name: terminology__gender_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -204,7 +204,7 @@ seeds:
       column_types:
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__hcpcs_level_2
+  - name: terminology__hcpcs_level_2_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -223,7 +223,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar(2000) {%- endif -%}
         short_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__icd_10_cm
+  - name: terminology__icd_10_cm_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -248,7 +248,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         long_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__icd_10_pcs
+  - name: terminology__icd_10_pcs_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -272,7 +272,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         long_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__mdc
+  - name: terminology__mdc_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -285,7 +285,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         mcd_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__medicare_dual_eligibility
+  - name: terminology__medicare_dual_eligibility_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -305,7 +305,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         dual_status_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__ssa_fips_state
+  - name: terminology__ssa_fips_state_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -318,7 +318,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         ssa_fips_state_name : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__medicare_status
+  - name: terminology__medicare_status_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -340,7 +340,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         medicare_status_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__ms_drg
+  - name: terminology__ms_drg_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -367,7 +367,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         deprecated: integer
         deprecated_date: date
-  - name: terminology__payer_type
+  - name: terminology__payer_type_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -384,7 +384,7 @@ seeds:
       column_types:
         payer_type : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__place_of_service
+  - name: terminology__place_of_service_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -404,7 +404,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         place_of_service_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__present_on_admission
+  - name: terminology__present_on_admission_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -424,7 +424,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__race
+  - name: terminology__race_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
@@ -463,7 +463,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__apr_drg
+  - name: terminology__apr_drg_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
