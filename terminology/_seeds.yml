@@ -443,7 +443,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         race_description : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__revenue_center
+  - name: terminology__revenue_center_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
