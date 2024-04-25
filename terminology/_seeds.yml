@@ -166,7 +166,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
         state : |
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
-  - name: terminology__ansi_fips_state
+  - name: terminology__ansi_fips_state_1
     config:
       database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
       schema: |
