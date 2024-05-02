@@ -3,7 +3,7 @@ version: 2
 seeds:
   - name: terminology__admit_source_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: admit_source_1
@@ -25,7 +25,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__admit_type_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: admit_type_1
@@ -45,7 +45,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__bill_type_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: bill_type_1
@@ -66,7 +66,7 @@ seeds:
         deprecated_date : date
   - name: terminology__claim_type_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: claim_type_1
@@ -85,7 +85,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__code_type_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: code_type_1
@@ -102,7 +102,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__discharge_disposition_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: discharge_disposition_1
@@ -123,7 +123,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__encounter_type_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: encounter_type_1
@@ -140,7 +140,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__ethnicity_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: ethnicity_1
@@ -153,7 +153,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__fips_county_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: fips_county_1
@@ -168,7 +168,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__ansi_fips_state_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: fips_state_1
@@ -189,7 +189,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__gender_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: gender_1
@@ -206,7 +206,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__hcpcs_level_2_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: hcpcs_level_2_1
@@ -225,7 +225,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__icd_10_cm_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: icd_10_cm_1
@@ -250,7 +250,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__icd_10_pcs_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: icd_10_pcs_1
@@ -274,7 +274,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__mdc_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: mdc_1
@@ -287,7 +287,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__medicare_dual_eligibility_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: medicare_dual_eligibility_1
@@ -307,7 +307,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__ssa_fips_state_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: ssa_state_codes_1
@@ -320,7 +320,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__medicare_status_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}
         {%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology
@@ -342,7 +342,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__ms_drg_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: ms_drg_1
@@ -369,7 +369,7 @@ seeds:
         deprecated_date: date
   - name: terminology__payer_type_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: payer_type_1
@@ -386,7 +386,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__place_of_service_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: place_of_service_1
@@ -406,7 +406,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__present_on_admission_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: present_on_admission_1
@@ -426,7 +426,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__race_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: race_1
@@ -445,7 +445,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__revenue_center_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: revenue_center_1
@@ -465,7 +465,7 @@ seeds:
           {%- if target.type == "bigquery" -%} string {%- else -%} varchar {%- endif -%}
   - name: terminology__apr_drg_1
     config:
-      database: "{{ var('terminology_database',var('tuva_database','tuva')) }}"
+      database: "{% if target.name == 'dev' %}pre-production-dna{% else %}{{ target.database }}{% endif %}"
       schema: |
         {%- if var('terminology_schema',None) != None -%}{{var('terminology_schema')}}{%- elif var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_terminology{% else %}terminology{%- endif -%}
       alias: apr_drg_1
